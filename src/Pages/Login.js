@@ -60,7 +60,7 @@ const HomeScreen = ({
         <Logo/>
         <Text style = {
           styles.title
-        }> Bonjour Sala! </Text> 
+        }> Bonjour ! </Text> 
         
         <TextInput style = {
           styles.input
@@ -68,6 +68,7 @@ const HomeScreen = ({
         onChangeText = {
           (text) => setUsername(text)
         }
+        autoCapitalize = 'none'
         value = {
           username
         }

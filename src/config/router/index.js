@@ -5,6 +5,9 @@ import ProfileScreen from "../../Pages/ProfileScreen";
 import CharactersScreen from "./CharactersStack";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+//ajouter ça en cas de problem avec fontawesome
+Icon.loadFont();
 import {
     SafeAreaView,
     ScrollView,
@@ -36,9 +39,9 @@ const Routes = () => {
 
 return (
 <Tab.Navigator>
-<Tab.Screen name="Characters" options={{}} component={CharactersScreen} />
-<Tab.Screen name="Favorite" component={Favorite} />
-<Tab.Screen name="Setting" component={Settings} />
+<Tab.Screen name="Characters" options={{ tabBarIcon: ({size, color}) => (<Icon name={"home"} color={color} size={size} />) }} component={CharactersScreen} />
+<Tab.Screen name="Favorite" options={{ tabBarIcon: ({size, color}) => (<Icon name={"heart"} color={color} size={size} />) }}  component={Favorite} />
+<Tab.Screen name="Setting" options={{ tabBarIcon: ({size, color}) => (<Icon name={"gear"} color={color} size={size} />) }}  component={Settings} />
 </Tab.Navigator>
 );
 }
